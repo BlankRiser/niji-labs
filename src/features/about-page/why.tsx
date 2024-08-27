@@ -1,10 +1,10 @@
 export const Why = () => {
 	return (
-		<div className="flex flex-col justify-center gap-4 items-center p-8">
+		<div className="flex flex-col items-center justify-center gap-4 p-8">
 			<h1 className="text-2xl font-medium">About Niji Labs</h1>
 			<div className="flex flex-col gap-2 text-neutral-600">
 				<p>
-					Welcome to the <span className="font-bold mr-1"> Niji component library!</span>
+					Welcome to the <span className="mr-1 font-bold"> Niji component library!</span>
 					"Niji," meaning "Rainbow" in Japanese, symbolizes the vibrant and diverse range
 					of UI components that this system offers.
 				</p>

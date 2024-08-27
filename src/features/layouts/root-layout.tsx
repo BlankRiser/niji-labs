@@ -6,10 +6,9 @@ export const RootComponent = () => {
 	return (
 		<div className="">
 			<div className="border-b border-b-neutral-300">
-				<div className="p-2 flex justify-between items-center gap-2  max-w-7xl mx-auto ">
+				<div className="mx-auto flex max-w-7xl items-center justify-between  gap-2 p-2 ">
 					<Link
 						to="/"
-						className="text-md"
 						activeProps={{
 							className: "font-bold",
 						}}
