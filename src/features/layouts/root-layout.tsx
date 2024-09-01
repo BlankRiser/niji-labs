@@ -9,9 +9,7 @@ export const RootComponent = () => {
 				<div className="mx-auto flex max-w-7xl items-center justify-between  gap-2 p-2 ">
 					<Link
 						to="/"
-						activeProps={{
-							className: "font-bold",
-						}}
+						
 						activeOptions={{ exact: true }}
 					>
 						<Logo />
@@ -31,7 +29,7 @@ export const RootComponent = () => {
 							to="/about"
 							className="text-sm text-neutral-600"
 							activeProps={{
-								className: "text-indigo-600",
+								className: "underline underline-offset-4 underline-neutral-600",
 							}}
 							activeOptions={{ exact: true }}
 						>
