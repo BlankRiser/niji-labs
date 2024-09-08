@@ -1,6 +1,11 @@
 import { DragAndDrop } from "./drag-n-drop/drag-n-drop"
 import { MultiSelect } from "./multi-select/multi-select"
+import { SimpleTable } from "./table/simple-table"
 import { WindowManager } from "./window-manager/window-manager"
+import  DragAndDropCode  from "./drag-n-drop/drag-n-drop?raw"
+import  MultiSelectCode  from "./multi-select/multi-select?raw"
+import  SimpleTableCode  from "./table/simple-table?raw"
+import  WindowManagerCode  from "./window-manager/window-manager?raw"
 
 export const labComponents = {
 	"drag and drop": {
@@ -22,6 +27,7 @@ export const labComponents = {
 			],
 		},
 		component: () => <DragAndDrop />,
+		code: DragAndDropCode,
 	},
 	"window manager": {
 		component: () => <WindowManager />,
@@ -38,6 +44,7 @@ export const labComponents = {
 				},
 			],
 		},
+		code: WindowManagerCode,
 	},
 	"Multi-Select": {
 		component: () => <MultiSelect />,
@@ -54,5 +61,23 @@ export const labComponents = {
 				},
 			],
 		},
+		code: MultiSelectCode,
+	},
+	"Table": {
+		component: () => <SimpleTable />,
+		wip: true,
+		meta: {
+			createdAt: "2024-09-07",
+			updatedAt: "2024-09-07",
+			description: "Variety of react table components",
+			tags: [ "react", "react-table" ],
+			libs: [
+				{
+					name: "@tanstack/react-table",
+					url: "https://tanstack.com/table/latest",
+				},
+			],
+		},
+		code: SimpleTableCode,
 	}
 }

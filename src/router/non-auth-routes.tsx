@@ -24,7 +24,7 @@ export const labRoute = createRoute( {
 } )
 
 const labIndexRouteSearchParams = z.object( {
-	search: z.string().optional(),
+	q: z.string().optional(),
 } )
 
 export const labIndexRoute = createRoute( {
