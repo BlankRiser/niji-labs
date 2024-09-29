@@ -1,5 +1,11 @@
 import { createRouter, ErrorComponent } from "@tanstack/react-router"
-import { aboutRoute, labComponentsRoute, labIndexRoute, labRoute, nonAuthenticatedRoute } from "./non-auth-routes"
+import {
+	aboutRoute,
+	labComponentsRoute,
+	labIndexRoute,
+	labRoute,
+	nonAuthenticatedRoute,
+} from "./non-auth-routes"
 import { rootRoute } from "./root-route"
 import { QueryClient } from "@tanstack/react-query"
 import { Spinner } from "@/components/ui/spinner"
@@ -7,7 +13,10 @@ import { Spinner } from "@/components/ui/spinner"
 const queryClient = new QueryClient()
 
 const routeTree = rootRoute.addChildren( [
-	nonAuthenticatedRoute.addChildren( [ aboutRoute, labRoute.addChildren( [ labIndexRoute, labComponentsRoute ] ) ] ),
+	nonAuthenticatedRoute.addChildren( [
+		aboutRoute,
+		labRoute.addChildren( [ labIndexRoute, labComponentsRoute ] ),
+	] ),
 ] )
 
 export const router = createRouter( {

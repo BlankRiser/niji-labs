@@ -13,13 +13,13 @@ export const nonAuthenticatedRoute = createRoute( {
 } )
 
 export const aboutRoute = createRoute( {
-	getParentRoute: () => nonAuthenticatedRoute,
+	getParentRoute: () => rootRoute,
 	path: "/about",
 	component: Why,
 } )
 
 export const labRoute = createRoute( {
-	getParentRoute: () => nonAuthenticatedRoute,
+	getParentRoute: () => rootRoute,
 	path: "lab",
 } )
 
@@ -31,7 +31,7 @@ export const labIndexRoute = createRoute( {
 	getParentRoute: () => labRoute,
 	path: "/",
 	component: Lab,
-validateSearch: ( search ) => labIndexRouteSearchParams.parse( search ),
+	validateSearch: ( search ) => labIndexRouteSearchParams.parse( search ),
 } )
 
 export const labComponentsRoute = createRoute( {

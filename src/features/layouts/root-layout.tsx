@@ -6,12 +6,8 @@ export const RootComponent = () => {
 	return (
 		<div className="">
 			<div className="border-b border-b-neutral-300">
-				<div className="mx-auto flex max-w-7xl items-center justify-between  gap-2 p-2 ">
-					<Link
-						to="/"
-						
-						activeOptions={{ exact: true }}
-					>
+				<div className="mx-auto flex max-w-7xl items-center justify-between gap-2 p-2">
+					<Link to="/" activeOptions={{ exact: true }}>
 						<Logo />
 					</Link>
 					<div className="flex items-center gap-4">
@@ -38,7 +34,9 @@ export const RootComponent = () => {
 					</div>
 				</div>
 			</div>
-			<Outlet />
+			<div className="mx-auto max-w-7xl px-2">
+				<Outlet />
+			</div>
 			<TanStackRouterDevtools position="bottom-right" />
 		</div>
 	)

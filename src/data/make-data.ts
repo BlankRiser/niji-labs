@@ -44,7 +44,7 @@ const newOrder = ( index: number ): Order => {
 	}
 }
 
-export const makeData = ( ...lens: number[] ) => {
+export const makeOrderData = ( ...lens: number[] ) => {
 	const makeDataLevel = ( depth = 0 ): Order[] => {
 		const len = lens[ depth ]
 		return range( len ).map( ( d ): Order => {

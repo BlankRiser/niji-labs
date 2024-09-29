@@ -21,7 +21,7 @@ module.exports = {
         mono: ['Geist Mono', 'monospace'],
       },
       backgroundImage: ({ theme }) => ({
-        logo: `linear-gradient(105deg,${theme('colors.violet.500')},${theme('colors.indigo.500')},${theme('colors.blue.500')},${theme('colors.green.500')},${theme('colors.yellow.500')},${theme('colors.orange.500')},${theme('colors.red.500')})`,
+        logo: `linear-gradient(60deg,${theme('colors.violet.500')},${theme('colors.indigo.500')},${theme('colors.blue.500')},${theme('colors.green.500')},${theme('colors.yellow.500')},${theme('colors.orange.500')},${theme('colors.red.500')})`,
       }),
       keyframes: {
         "accordion-down": {

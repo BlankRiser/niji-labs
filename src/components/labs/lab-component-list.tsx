@@ -1,11 +1,13 @@
 import { DragAndDrop } from "./drag-n-drop/drag-n-drop"
 import { MultiSelect } from "./multi-select/multi-select"
 import { SimpleTable } from "./table/simple-table"
+import { Buttons } from "./buttons/buttons"
 import { WindowManager } from "./window-manager/window-manager"
-import  DragAndDropCode  from "./drag-n-drop/drag-n-drop?raw"
-import  MultiSelectCode  from "./multi-select/multi-select?raw"
-import  SimpleTableCode  from "./table/simple-table?raw"
-import  WindowManagerCode  from "./window-manager/window-manager?raw"
+import DragAndDropCode from "./drag-n-drop/drag-n-drop?raw"
+import MultiSelectCode from "./multi-select/multi-select?raw"
+import SimpleTableCode from "./table/simple-table?raw"
+import WindowManagerCode from "./window-manager/window-manager?raw"
+import ButtonsCode from "./buttons/buttons?raw"
 
 export const labComponents = {
 	"drag and drop": {
@@ -63,7 +65,7 @@ export const labComponents = {
 		},
 		code: MultiSelectCode,
 	},
-	"Table": {
+	Table: {
 		component: () => <SimpleTable />,
 		wip: true,
 		meta: {
@@ -79,5 +81,22 @@ export const labComponents = {
 			],
 		},
 		code: SimpleTableCode,
-	}
+	},
+	Buttons: {
+		component: () => <Buttons />,
+		code: ButtonsCode,
+		wip: true,
+		meta: {
+			createdAt: "2024-09-28",
+			updatedAt: "2024-09-28",
+			description: "Variety of buttons",
+			tags: [ "button" ],
+			libs: [
+				{
+					name: "tailwindcss",
+					url: "https://tailwindcss.com/",
+				},
+			],
+		},
+	},
 }
