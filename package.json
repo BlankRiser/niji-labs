@@ -12,6 +12,7 @@
   "dependencies": {
     "@fontsource/geist-mono": "^5.0.3",
     "@fontsource/geist-sans": "^5.0.3",
+    "@fontsource/sansita": "^5.1.0",
     "@radix-ui/react-dialog": "^1.1.1",
     "@radix-ui/react-popover": "^1.1.1",
     "@radix-ui/react-slot": "^1.1.0",
@@ -40,6 +41,7 @@
   "devDependencies": {
     "@eslint/js": "^9.9.0",
     "@faker-js/faker": "^9.0.0",
+    "@tanstack/eslint-plugin-router": "^1.58.6",
     "@tanstack/react-query-devtools": "^5.52.1",
     "@tanstack/router-devtools": "^1.50.1",
     "@tanstack/router-plugin": "^1.49.3",

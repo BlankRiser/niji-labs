@@ -19,6 +19,7 @@ module.exports = {
     extend: {
       fontFamily:{
         mono: ['Geist Mono', 'monospace'],
+        sansita: ['Sansita', 'cursive'],
       },
       backgroundImage: ({ theme }) => ({
         logo: `linear-gradient(60deg,${theme('colors.violet.500')},${theme('colors.indigo.500')},${theme('colors.blue.500')},${theme('colors.green.500')},${theme('colors.yellow.500')},${theme('colors.orange.500')},${theme('colors.red.500')})`,

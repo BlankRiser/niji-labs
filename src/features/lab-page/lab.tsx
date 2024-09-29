@@ -11,6 +11,7 @@ export const Lab = () => {
 	return (
 		<div className="mx-auto flex max-w-md flex-col gap-2 py-4">
 			<Input
+				autoFocus
 				type="text"
 				placeholder="Search components..."
 				onChange={( e ) => {
@@ -19,7 +20,7 @@ export const Lab = () => {
 			/>
 			<div className="flex flex-col gap-1">
 				{Object.entries( labComponents )
-					.filter( ( [ c, _ ] ) => c.includes( q ?? "" ) )
+					.filter( ( [ c, _ ] ) => c.toLowerCase().includes( q?.toLowerCase() ?? "" ) )
 					.map( ( [ component, data ], index ) => (
 						<Link
 							key={index}
@@ -39,5 +40,3 @@ export const Lab = () => {
 		</div>
 	)
 }
-
-

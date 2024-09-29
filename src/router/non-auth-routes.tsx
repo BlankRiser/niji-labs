@@ -10,6 +10,10 @@ export const nonAuthenticatedRoute = createRoute( {
 	getParentRoute: () => rootRoute,
 	path: "/",
 	component: NonAuthLayout,
+	staticData: {
+		title: "Niji Labs",
+		description: "A collection of experiments and projects by Ram Shankar Choudhary",
+	},
 } )
 
 export const aboutRoute = createRoute( {
