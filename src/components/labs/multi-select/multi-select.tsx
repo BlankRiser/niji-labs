@@ -1,11 +1,8 @@
-"use client"
-
-import * as React from "react"
-import { X } from "lucide-react"
-
 import { Badge } from "@/components/ui/badge"
 import { Command, CommandGroup, CommandItem, CommandList } from "@/components/ui/command"
 import { Command as CommandPrimitive } from "cmdk"
+import { X } from "lucide-react"
+import React from "react"
 
 type Country = Record<"value" | "label", string>
 
@@ -94,7 +91,7 @@ export const MultiSelect = () => {
 			<div className="relative mt-2">
 				<CommandList>
 					{open && selectables.length > 0 ? (
-						<div className="bg-popover text-popover-foreground absolute top-0 z-10 w-full rounded-md border shadow-md outline-none animate-in">
+						<div className="absolute top-0 z-10 w-full rounded-md border bg-white text-neutral-800 shadow-md outline-none animate-in">
 							<CommandGroup className="h-full overflow-auto">
 								{selectables.map( ( country ) => {
 									return (
@@ -104,7 +101,7 @@ export const MultiSelect = () => {
 												e.preventDefault()
 												e.stopPropagation()
 											}}
-											onSelect={( value ) => {
+											onSelect={( _ ) => {
 												setInputValue( "" )
 												setSelected( ( prev ) => [ ...prev, country ] )
 											}}

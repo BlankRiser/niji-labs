@@ -2,10 +2,8 @@ import { cn } from "@/lib/utils"
 import { useEffect, useLayoutEffect, useState } from "react"
 import { createSwapy } from "swapy"
 
-
 const DraggableCounter = ( { title, swapyItemId }: { title: string; swapyItemId: string } ) => {
 	const [ count, setCount ] = useState( 0 )
-
 	useEffect( () => {
 		const id = setInterval( () => {
 			setCount( ( c ) => c + 1 )
@@ -15,14 +13,18 @@ const DraggableCounter = ( { title, swapyItemId }: { title: string; swapyItemId:
 	}, [] )
 
 	return (
-		<div data-swapy-item={swapyItemId} className={cn( [ "bg-gradient-to-br from-neutral-600 to-neutral-900 w-full rounded-md p-4 text-white" ] )}>
+		<div
+			data-swapy-item={swapyItemId}
+			className={cn( [
+				"w-full rounded-md bg-gradient-to-br from-neutral-600 to-neutral-900 p-4 text-white",
+			] )}
+		>
 			<span className="text-2xl">
 				{title}: {count}
 			</span>
 		</div>
 	)
 }
-
 export const WindowManager = () => {
 	return (
 		<div className="h-[75dvh] w-full">
