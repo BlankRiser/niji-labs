@@ -82,7 +82,7 @@ export const PreviewComponent = ( { preview, code }: { preview: ReactNode; code:
 						minSize={matchesTablet ? 100 : 25}
 						ref={ref}
 						defaultSize={size}
-						className="max-h-[calc(100dvh-14rem)] border border-red-400 p-4"
+						className="max-h-[calc(100dvh-14rem)] p-4"
 					>
 						{preview}
 					</ResizablePanel>

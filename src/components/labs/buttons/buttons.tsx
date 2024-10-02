@@ -5,39 +5,70 @@ import { X } from "lucide-react"
 export const Buttons = () => {
 	return (
 		<div className="flex flex-col gap-4">
-			{( [ "xs", "sm", "md", "lg" ] as const ).map( ( size ) => (
-				<div key={size} className="flex flex-wrap gap-2">
-					<CVAButton onlyIcon size={size} variant={"default"} />
-					<CVAButton onlyIcon size={size} variant={"secondary"} />
-					<CVAButton onlyIcon size={size} variant={"outline"} />
-					<CVAButton onlyIcon size={size} variant={"destructive"} />
-					<CVAButton onlyIcon size={size} variant={"ghost"} />
-					<CVAButton onlyIcon size={size} variant={"link"} />
-				</div>
-			) )}
-
-			{( [ "xs", "sm", "md", "lg" ] as const ).map( ( size ) => (
-				<div key={size} className="flex flex-wrap gap-2">
-					<CVAButton size={size} variant={"default"} />
-					<CVAButton size={size} variant={"secondary"} />
-					<CVAButton size={size} variant={"outline"} />
-					<CVAButton size={size} variant={"destructive"} />
-					<CVAButton size={size} variant={"ghost"} />
-					<CVAButton size={size} variant={"link"} />
-                   
-				</div>
-			) )}
+			<div className="flex flex-wrap gap-2">
+				<CVAButton size={"md"} variant={"cta"}>
+					cta
+				</CVAButton>
+				<CVAButton size={"md"} variant={"cta"}>
+					<X />
+				</CVAButton>
+			</div>
+			<div className="flex flex-wrap gap-2">
+				<CVAButton size={"md"} variant={"default"}>
+					<X />
+				</CVAButton>
+				<CVAButton size={"md"} variant={"secondary"}>
+					<X />
+				</CVAButton>
+				<CVAButton size={"md"} variant={"outline"}>
+					<X />
+				</CVAButton>
+				<CVAButton size={"md"} variant={"destructive"}>
+					<X />
+				</CVAButton>
+				<CVAButton size={"md"} variant={"ghost"}>
+					<X />
+				</CVAButton>
+				<CVAButton size={"md"} variant={"link"}>
+					<X />
+				</CVAButton>
+			</div>
+			<div className="flex flex-wrap gap-2">
+				<CVAButton size={"md"} variant={"default"}>
+					default
+				</CVAButton>
+				<CVAButton size={"md"} variant={"secondary"}>
+					secondary
+				</CVAButton>
+				<CVAButton size={"md"} variant={"outline"}>
+					outline
+				</CVAButton>
+				<CVAButton size={"md"} variant={"destructive"}>
+					destructive
+				</CVAButton>
+				<CVAButton size={"md"} variant={"ghost"}>
+					ghost
+				</CVAButton>
+				<CVAButton size={"md"} variant={"link"}>
+					link
+				</CVAButton>
+			</div>
 		</div>
 	)
 }
 
-type DefaultButtonProps = React.ComponentProps<"button"> &
-	VariantProps<typeof baseButtonVariants> & { onlyIcon?: boolean }
+type DefaultButtonProps = React.ComponentProps<"button"> & VariantProps<typeof baseButtonVariants>
 
-const CVAButton: React.FC<DefaultButtonProps> = ( { onlyIcon, variant, size, ...props } ) => {
+const CVAButton: React.FC<DefaultButtonProps> = ( {
+	children,
+	variant,
+	size,
+	className,
+	...props
+} ) => {
 	return (
-		<button className={cn( baseButtonVariants( { variant, size } ) )} {...props}>
-			{onlyIcon ? <X /> : `Button 1 ${variant} ${size}`}
+		<button className={cn( [ baseButtonVariants( { variant, size } ), className ] )} {...props}>
+			{children}
 		</button>
 	)
 }
@@ -49,7 +80,7 @@ const baseButtonVariants = cva(
 			variant: {
 				none: "",
 				default:
-					"bg-neutral-900 text-neutral-50 shadow hover:bg-neutral-900/90 active:bg-neutral-800",
+					"bg-neutral-900 text-neutral-50 shadow hover:bg-neutral-700 active:bg-neutral-800",
 				secondary:
 					"bg-neutral-100 text-neutral-900 shadow-sm hover:bg-neutral-200 active:bg-neutral-200/80 ",
 				outline:
@@ -58,7 +89,8 @@ const baseButtonVariants = cva(
 				link: "text-neutral-900 underline underline-offset-4 hover:text-indigo-600 dark:text-neutral-50",
 				destructive:
 					"bg-red-500 text-neutral-50 shadow-sm hover:bg-red-500/90 active:bg-red-600 dark:bg-red-900",
-            },
+				cta: "border border-transparent text-neutral-900 transition-colors [background:linear-gradient(#fafafa,#fafafa)_padding-box,linear-gradient(to_top,#e0e7ff,#818cf8)_border-box] hover:[background:linear-gradient(#f5f5f5,#f5f5f5)_padding-box,linear-gradient(to_top,#c7d2fe,#818cf8)_border-box] active:[background:linear-gradient(#e5e5e5,#e5e5e5)_padding-box,linear-gradient(to_top,#c7d2fe,#818cf8)_border-box]",
+			},
 			size: {
 				xs: "h-6 min-w-6 gap-1 rounded px-1 text-xs [&>svg]:size-3",
 				sm: "h-8 min-w-8 gap-2 rounded px-2 text-sm [&>svg]:size-3",
