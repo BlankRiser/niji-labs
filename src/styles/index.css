@@ -5,3 +5,8 @@
 html, body {
   font-family: 'Geist Sans', sans-serif;
 }
+
+::selection {
+  background-color: #fefcbf;
+  color: #1a202c;
+}

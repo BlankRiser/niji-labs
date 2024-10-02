@@ -6,7 +6,7 @@ export const Buttons = () => {
 	return (
 		<div className="flex flex-col gap-4">
 			{( [ "xs", "sm", "md", "lg" ] as const ).map( ( size ) => (
-				<div key={size} className="flex gap-2">
+				<div key={size} className="flex flex-wrap gap-2">
 					<CVAButton onlyIcon size={size} variant={"default"} />
 					<CVAButton onlyIcon size={size} variant={"secondary"} />
 					<CVAButton onlyIcon size={size} variant={"outline"} />
@@ -17,7 +17,7 @@ export const Buttons = () => {
 			) )}
 
 			{( [ "xs", "sm", "md", "lg" ] as const ).map( ( size ) => (
-				<div key={size} className="flex gap-2">
+				<div key={size} className="flex flex-wrap gap-2">
 					<CVAButton size={size} variant={"default"} />
 					<CVAButton size={size} variant={"secondary"} />
 					<CVAButton size={size} variant={"outline"} />
